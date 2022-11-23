@@ -22,4 +22,4 @@ jobs:
           pip install -r requirements.txt
           
       - name: Run the Scraper script # run main.py
-        run: python main.py
+        run: python asynchronous_recipes_scraper.py
