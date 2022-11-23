@@ -2,6 +2,15 @@ name: GitHub Action to run the Epicurious Recipes scraper script
 
 on:
   workflow_dispatch:
+    inputs:
+      script_to_run:
+        description: 'The Python script to execute'
+        required: true
+        default: 'asynchronous_recipes_scraper.py'
+        type: choice
+        options:
+        - 'asynchronous_recipes_scraper.py'
+        - 'synchronous_recipes_scraper.py'
 
 jobs:
   build:
@@ -22,4 +31,4 @@ jobs:
           pip install -r requirements.txt
           
       - name: Run the Scraper script # run main.py
-        run: python asynchronous_recipes_scraper.py
+        run: python ${{ inputs.script_to_run }}
