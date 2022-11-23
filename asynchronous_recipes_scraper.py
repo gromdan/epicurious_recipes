@@ -50,17 +50,20 @@ async def main(pages_to_scrape=range(1, 2000+1)):
         
 if __name__ == "__main__":
     all_recipes_final = asyncio.run(main())
-    print()
-    print("-" * 40)
-    print("Number of pages scraped:", 2000 - len(ERROR_PAGES))
-    print("Number of Recipes:", len(all_recipes_final))
-    print()
-    print("Number of error pages:", len(ERROR_PAGES))
-    print("Error pages:", ERROR_PAGES)
-    print()
 
     if ERROR_PAGES:
         all_recipes_final.extend(asyncio.run(main(ERROR_PAGES)))
+
+    print()
+    print("-" * 40)
+
+    print("Number of pages scraped:", 2000 - len(ERROR_PAGES))
+    print("Number of Recipes:", len(all_recipes_final))
+    print()
+    
+    print("Number of error pages:", len(ERROR_PAGES))
+    print("Error pages:", ERROR_PAGES)
+    print()
 
     print("Total Number of Recipes:", len(all_recipes_final))
     print()
