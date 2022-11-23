@@ -1,0 +1,25 @@
+name: GitHub Action to run the Epicurious Recipes scraper script
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8' # install the python version needed
+          
+      - name: Install Python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: Run the Scraper script # run main.py
+        run: python main.py
