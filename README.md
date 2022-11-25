@@ -18,8 +18,8 @@
 ## Results
 |  | Synchronous Scraper | Asynchronous Scraper | Speed Improvement
 | --- | --- | --- | ---
-| **Execution time (s)** (with delay in server response) | 4259.62 | 115.17 | 97.29%
-| **Execution time (s)** (without delay in server response) | 138.02 | 14.19 | 89.72%
+| **Execution time (s)**<br>(with delay in server response) | 4259.62 | 115.17 | **97.29%**
+| **Execution time (s)**<br>(without delay in server response) | 138.02 | 14.19 | **89.72%**
 
 - The *Execution time (with delay in server response)* is the **average time (in seconds)** computed from **7** different runs of the asynchronous and synchronous recipes scraper
 - The *Execution time (without delay in server response)* is the **average time (in seconds)** computed from **15** different runs of the asynchronous and synchronous recipes scraper
